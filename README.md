@@ -2,9 +2,30 @@
 
 Just using Random Resized Crop in augmentation ~ >10% accuracy in adversarial images!
 
-## Overview
+## Overview & Performance
 
 This project implements [**Marginal Entropy Minimization with One Test Point (MEMO)**](https://proceedings.neurips.cc/paper_files/paper/2022/file/fc28053a08f59fccb48b11f2e31e81c7-Paper-Conference.pdf) for domain adaptation in image classification. It is based on the paper **"MEMO: Test Time Robustness via Adaptation and Augmentation"**, using the ImageNet-A dataset. The approach addresses domain shifts, adapting to each test sample individually without needing additional training data.
+
+- Dataset: ImageNet-A, containing approximately 7,500 challenging images with significant domain shifts. The dataset poses a challenge due to:
+  - Adversarial examples: Images are selected to be difficult for standard models.
+  - Severe domain shifts: The test images differ greatly from training data, testing the model's adaptability.
+- Backbone Model: CLIP (for zero-shot performance).
+- Overall Accuracy:
+  - Zero-Shot: 38.17%
+  - Adapted: 47.55%
+    
+The implemented MEMO model showed significant improvements in top-1 accuracy on the ImageNet-A dataset, effectively handling domain shifts.
+
+## Why Test Time Robustification with MEMO?
+This paper implements a novel approach to improve the robustness of deep neural networks at test time.Unlike many other test time training approach, it doesn't assume any information about the distribution/distribution shift on the test set and adapts each one by the following approach: 
+
+1. Apply various data augmentations to each test example.
+2. Adapt all model parameters by minimizing the entropy of the model's average output distribution across these augmentations.
+3. This encourages consistent predictions across different augmentations while maintaining confidence.
+
+- The approach requires no changes to the training process and works with any probabilistic and adaptable model. It has shown significant improvements in accuracy on several distribution shift benchmarks, including ImageNet-C, ImageNet-R, and ImageNet-A.
+
+<img src="Model_Architecture.png">
 
 ## Class Accuracies
 
@@ -78,17 +99,6 @@ set `wandb_active = True` and login to your account. It's free to use with unive
 [Also you can see our augmentations on a wandb report here](https://wandb.ai/project-zero/imagenet-adaptation-zehra/reports/Augmentations-for-MEMO--Vmlldzo4NTA1NTA1?accessToken=u37q32nxru6y6vir0glo3e9h616qscb09hj40gx2tq25mv6c6rxckrxjqk9m9os7)
 
 <img src="Wandb_Augmentation_Panel.png">
-
-## Findings
-- Dataset: ImageNet-A, containing approximately 7,500 challenging images with significant domain shifts. The dataset poses a challenge due to:
-  - Adversarial examples: Images are selected to be difficult for standard models.
-  - Severe domain shifts: The test images differ greatly from training data, testing the model's adaptability.
-- Backbone Model: CLIP (for zero-shot performance).
-- Overall Accuracy:
-  - Zero-Shot: 38.17%
-  - Adapted: 47.55%
-    
-The implemented MEMO model showed significant improvements in top-1 accuracy on the ImageNet-A dataset, effectively handling domain shifts.
 
 ## Recommendations for Further Improvements
 1. Explore Different Backbones: Test other models besides CLIP to potentially improve adaptation performance.
