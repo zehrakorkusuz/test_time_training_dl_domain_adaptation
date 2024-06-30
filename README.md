@@ -75,7 +75,7 @@ For AWS SageMaker, refer to the `memo_sagemaker.ipynb` notebook for specific ins
 If you would like to enable wandb to track your experiments, 
 set `wandb_active = True` and login to your account. It's free to use with university account. 
 
-[Also you can see our augmentations here](https://wandb.ai/project-zero/imagenet-adaptation-zehra/reports/Augmentations-for-MEMO--Vmlldzo4NTA1NTA1?accessToken=u37q32nxru6y6vir0glo3e9h616qscb09hj40gx2tq25mv6c6rxckrxjqk9m9os7) 
+[Also you can see our augmentations on a wandb report here](https://wandb.ai/project-zero/imagenet-adaptation-zehra/reports/Augmentations-for-MEMO--Vmlldzo4NTA1NTA1?accessToken=u37q32nxru6y6vir0glo3e9h616qscb09hj40gx2tq25mv6c6rxckrxjqk9m9os7)
 
 <img src="Wandb_Augmentation_Panel.png">
 
