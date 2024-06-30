@@ -2,7 +2,7 @@
 
 Just using Random Resized Crop in augmentation ~ >10% accuracy in adversarial images!
 
-## Overview & Performance
+## Overview & top-1 Accuracy
 
 This project implements [**Marginal Entropy Minimization with One Test Point (MEMO)**](https://proceedings.neurips.cc/paper_files/paper/2022/file/fc28053a08f59fccb48b11f2e31e81c7-Paper-Conference.pdf) for domain adaptation in image classification. It is based on the paper **"MEMO: Test Time Robustness via Adaptation and Augmentation"**, using the ImageNet-A dataset. The approach addresses domain shifts, adapting to each test sample individually without needing additional training data.
 
