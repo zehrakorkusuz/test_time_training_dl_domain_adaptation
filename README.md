@@ -1,6 +1,6 @@
 # Marginal entropy minimization with one test point (MEMO): Test Time Robustness via Adaptation and Augmentation 
 
-Just using Random Resized Crop in augmentation ~ >10% accuracy in adversarial images!
+Just using Random Resized Crop in augmentation with MEMO ~ >10% accuracy in adversarial images!
 
 ## Overview & top-1 Accuracy
 
