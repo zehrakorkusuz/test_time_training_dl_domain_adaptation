@@ -29,7 +29,7 @@ prompt_templates = [
 
 <img src="prompt_templates.png">
     
-The implemented MEMO model showed significant improvements in top-1 accuracy on the ImageNet-A dataset, effectively handling domain shifts.
+This reimplementation of MEMO model showed significant improvements in top-1 accuracy on the ImageNet-A dataset, effectively handling domain shifts.
 
 ## Why Test Time Robustification with MEMO?
 This paper implements a novel approach to improve the robustness of deep neural networks at test time.Unlike many other test time training approach, it doesn't assume any information about the distribution/distribution shift on the test set and adapts each one by the following approach: 
