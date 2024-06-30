@@ -9,11 +9,25 @@ This project implements [**Marginal Entropy Minimization with One Test Point (ME
 - Dataset: ImageNet-A, containing approximately 7,500 challenging images with significant domain shifts. The dataset poses a challenge due to:
   - Adversarial examples: Images are selected to be difficult for standard models.
   - Severe domain shifts: The test images differ greatly from training data, testing the model's adaptability.
-  - 
+
 - Backbone Model: [`CLIP`](https://github.com/openai/CLIP) (for zero-shot performance and as a model backbone). [Colab Notebook to start with CLIP](https://colab.research.google.com/drive/1MHc4Eq6iQ9qC3viIkcANw91JKJk6FwEv?usp=sharing)
 - Overall Accuracy:
   - Zero-Shot: 38.17%
   - Adapted: 47.55%
+ 
+- Experimentation with prompt templates for zero-shot. We used the following prompts and get accuracies between 35% & 47% overall accuracy.
+
+```python
+prompt_templates = [
+    "This is a photo of a {}.",
+    "Identify the {} in this image.",
+    "A {} is present in this photo.",
+    "This image features a {}.",
+    "An illustration of a {}.",
+    "An image that contains a {}."]
+```
+
+<img src="prompt_templates.png">
     
 The implemented MEMO model showed significant improvements in top-1 accuracy on the ImageNet-A dataset, effectively handling domain shifts.
 
@@ -104,7 +118,8 @@ set `wandb_active = True` and login to your account. It's free to use with unive
 ## Recommendations for Further Improvements
 1. Explore Different Backbones: Test other models besides CLIP to potentially improve adaptation performance.
 2. Enhance Augmentation Techniques: Experiment with advanced data augmentation methods to bolster robustness.
-3. Parameter Tuning: Conduct hyperparameter optimization for better adaptation results.We 
-4. Real-World Testing: Apply the model to other datasets with varying domain shifts to evaluate generalizability.
+3. Parameter Tuning: Conduct hyperparameter optimization for better adaptation results.
+
+4. When CLIP is used, also ensembling the model with prompt tuning approach (see TPT paper) similar to MEMO might provide more robust results.
 
 PS: This is the implementation of the paper for the Deep Learning Master Course at the University of Trento. [March 2024]
