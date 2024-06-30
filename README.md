@@ -9,7 +9,7 @@ This project implements [**Marginal Entropy Minimization with One Test Point (ME
 - Dataset: ImageNet-A, containing approximately 7,500 challenging images with significant domain shifts. The dataset poses a challenge due to:
   - Adversarial examples: Images are selected to be difficult for standard models.
   - Severe domain shifts: The test images differ greatly from training data, testing the model's adaptability.
-- Backbone Model: CLIP (for zero-shot performance). [Notebook for understanding CLIP](https://colab.research.google.com/drive/1MHc4Eq6iQ9qC3viIkcANw91JKJk6FwEv?usp=sharing)
+- Backbone Model: [`CLIP`](https://github.com/openai/CLIP) (for zero-shot performance and as a model backbone). [Colab Notebook to start with CLIP](https://colab.research.google.com/drive/1MHc4Eq6iQ9qC3viIkcANw91JKJk6FwEv?usp=sharing)
 - Overall Accuracy:
   - Zero-Shot: 38.17%
   - Adapted: 47.55%
