@@ -6,6 +6,27 @@ Just using Random Resized Crop in augmentation ~ >10% accuracy in adversarial im
 
 This project implements [**Marginal Entropy Minimization with One Test Point (MEMO)**](https://proceedings.neurips.cc/paper_files/paper/2022/file/fc28053a08f59fccb48b11f2e31e81c7-Paper-Conference.pdf) for domain adaptation in image classification. It is based on the paper **"MEMO: Test Time Robustness via Adaptation and Augmentation"**, using the ImageNet-A dataset. The approach addresses domain shifts, adapting to each test sample individually without needing additional training data.
 
+## Class Accuracies
+
+You can see the class accuracies before and after adaptation in the `results.csv` file.
+
+| #  | Baseline | Adapted | Total | Label                | Baseline Accuracy | Adapted Accuracy |
+|----|----------|---------|-------|----------------------|--------------------|-------------------|
+| 1  | 0        | 18      | 20    | African bush elephant| 0.6429             | 0.7143            |
+| 2  | 1        | 24      | 42    | American alligator   | 0.3478             | 0.6087            |
+| 3  | 2        | 18      | 18    | American black bear  | 0.5806             | 0.5806            |
+| 4  | 3        | 25      | 56    | American bullfrog    | 0.2500             | 0.5600            |
+| 5  | 4        | 44      | 84    | American robin       | 0.4400             | 0.8400            |
+| 6  | 5        | 7       | 8     | Chihuahua            | 0.3333             | 0.3810            |
+| 7  | 6        | 19      | 21    | Christmas stocking   | 0.8261             | 0.9130            |
+| 8  | 7        | 4       | 6     | German Shepherd Dog  | 0.3077             | 0.4615            |
+| 9  | 8        | 6       | 6     | Golden Retriever     | 0.3158             | 0.3158            |
+| 10 | 9        | 26      | 30    | Persian cat          | 0.3514             | 0.4054            |
+| 11 | 10       | 8       | 9     | Rottweiler           | 0.2286             | 0.2571            |
+| 12 | 11       | 12      | 12    | Academic gown        | 1.0000             | 1.0000            |
+| 13 | 12       | 2       | 4     | Accordion            | 0.4000             | 0.8000            |
+
+
 ## Setup and Execution
 
 ### Requirements
@@ -47,7 +68,7 @@ ImageNet-A/
 │
 └── ...
 ```
-For AWS SageMaker, refer to the memo_sagemaker notebook for specific instructions.
+For AWS SageMaker, refer to the `memo_sagemaker.ipynb` notebook for specific instructions.
 
 #### Enabling Weights & Biases
 
