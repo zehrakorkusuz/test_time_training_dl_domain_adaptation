@@ -15,7 +15,7 @@ This project implements [**Marginal Entropy Minimization with One Test Point (ME
   - Zero-Shot: 38.17%
   - Adapted: 47.55%
  
-- Experimentation with prompt templates for zero-shot. We used the following prompts and get accuracies between 35% & 47% overall accuracy.
+- Experimentation with prompt templates for zero-shot. We used the following prompts and get accuracies between 35% & 47% for random small portion of dataset.
 
 ```python
 prompt_templates = [
