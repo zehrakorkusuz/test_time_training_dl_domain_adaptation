@@ -122,4 +122,4 @@ set `wandb_active = True` and login to your account. It's free to use with unive
 
 4. When CLIP is used, also ensembling the model with prompt tuning approach (see TPT paper) similar to MEMO might provide more robust results.
 
-PS: This is the implementation of the paper for the Deep Learning Master Course at the University of Trento. [March 2024]
+PS: This is the implementation of the paper for the Deep Learning Master Course provided by Elisa Ricci at the University of Trento. [March 2024]
